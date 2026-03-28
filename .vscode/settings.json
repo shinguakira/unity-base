@@ -1,0 +1,13 @@
+{
+    "dotnet.defaultSolution": "Assembly-CSharp.sln",
+    "omnisharp.useModernNet": true,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/*.meta": false,
+        "Library/": true,
+        "Temp/": true,
+        "Logs/": true,
+        "UserSettings/": true
+    }
+}

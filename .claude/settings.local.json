@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Program Files/Unity/**)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Bash(\"C:/Users/user2/AppData/Local/Programs/Microsoft VS Code/bin/code.cmd\" --install-extension visualstudiotoolsforunity.vstuc)",
+      "Bash(\"C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Unity.exe\" -createProject \"e:/tmp/unity-fps-temp\" -quit -batchmode -logFile -)",
+      "Bash(\"C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Unity.exe\" -projectPath \"e:/workspace/unity-fps-sample\" -batchmode -quit -logFile -)",
+      "Bash(ls \"e:/workspace/unity-fps-sample/\"*.csproj)",
+      "Bash(ls \"e:/workspace/unity-fps-sample/\"*.sln)",
+      "Bash(tasklist)",
+      "Bash(taskkill //F //IM Unity.exe)",
+      "Bash(taskkill //F //IM UnityCrashHandler64.exe)",
+      "Bash(taskkill //F //IM UnityPackageManager.exe)",
+      "Bash(taskkill //F //IM \"Unity.Licensing.Client.exe\")",
+      "Bash(export PATH=\"/c/Program Files/dotnet:$PATH\")",
+      "Bash(dotnet build:*)",
+      "Bash(winget install:*)",
+      "Bash(winget search:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(chmod +x \"e:/workspace/unity-fps-sample/unity.sh\")",
+      "Bash('C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Unity.exe' -projectPath e:/workspace/unity-fps-sample -batchmode -quit -logFile e:/tmp/unity-build.log)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(bash unity.sh compile)",
+      "Bash(find e:workspaceunity-fps-sample/Assets -type f \\\\\\(-name *.fbx -o -name *.obj -o -name *.blend \\\\\\))"
+    ],
+    "additionalDirectories": [
+      "e:\\workspace\\unity-fps-sample"
+    ]
+  }
+}
