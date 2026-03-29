@@ -41,7 +41,21 @@ After any code change, run:
 bash compile-check.sh
 ```
 
-This runs a Unity batch-mode compile and reports errors. Zero errors required before submitting.
+This launches Unity in batch mode, compiles all scripts, and reports any `error CS` lines from the log. **Zero errors required before submitting.**
+
+**Unity Editor must not have this project open** while the script runs — batch mode cannot acquire the project lock if the Editor already holds it.
+
+If the Editor is open on this project, kill it first:
+
+```bash
+# Check
+tasklist | grep -i "^Unity.exe"
+
+# Kill
+taskkill /IM Unity.exe /F
+```
+
+Then re-run `compile-check.sh`.
 
 ## Coding Conventions
 
