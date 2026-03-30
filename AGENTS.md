@@ -2,6 +2,13 @@
 
 Agent guidance for this repository. Read this before starting any work.
 
+## Environment
+
+**Windows + Git Bash only. Never use WSL-style `/mnt/` paths.**
+- `pwd` in Git Bash returns `/e/workspace/...` — this is normal, not an error
+- Pass paths to Windows executables using `pwd -W` to get `E:/workspace/...`
+- Do not generate `/mnt/`, WSL, or Linux filesystem assumptions
+
 ## Project Overview
 
 A generic Unity project template (Unity 2022.3 LTS).

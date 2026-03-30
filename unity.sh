@@ -1,6 +1,6 @@
 #!/bin/bash
 UNITY="C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Unity.exe"
-PROJECT="$(cd "$(dirname "$0")" && pwd)"
+PROJECT="$(cd "$(dirname "$0")" && pwd -W)"
 LOG="e:/tmp/unity-build.log"
 
 case "$1" in
