@@ -9,5 +9,6 @@
         "Temp/": true,
         "Logs/": true,
         "UserSettings/": true
-    }
+    },
+    "dotnet.preferCSharpExtension": true
 }

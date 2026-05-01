@@ -36,33 +36,20 @@ unity-base/
 ├── Packages/
 │   └── manifest.json        # Unity package dependencies
 ├── ProjectSettings/
-├── compile-check.sh         # Batch-mode compile check
-└── unity.sh                 # Unity Editor launcher
+└── unity.ps1                # Unity launcher (open / compile)
 ```
+
+## Unity
+
+- Unity 2022.3 LTS
+- Launcher / compile check: `powershell -ExecutionPolicy Bypass -File unity.ps1 <action>`
+  - `unity.ps1 open` (default) — open the Editor
+  - `unity.ps1 compile` — batch-mode compile, reports `error CS` lines from `E:\tmp\unity-build.log`
+- `unity.ps1 compile` automatically stops any running Unity.exe and removes the project lockfile before starting batch mode.
 
 ## Verifying Changes
 
-After any code change, run:
-
-```bash
-bash compile-check.sh
-```
-
-This launches Unity in batch mode, compiles all scripts, and reports any `error CS` lines from the log. **Zero errors required before submitting.**
-
-**Unity Editor must not have this project open** while the script runs — batch mode cannot acquire the project lock if the Editor already holds it.
-
-If the Editor is open on this project, kill it first:
-
-```bash
-# Check
-tasklist | grep -i "^Unity.exe"
-
-# Kill
-taskkill /IM Unity.exe /F
-```
-
-Then re-run `compile-check.sh`.
+After any code change, run `unity.ps1 compile`. **Zero `error CS` lines required before submitting.**
 
 ## Coding Conventions
 
@@ -127,7 +114,7 @@ ObjectPool.Instance.Return("Bullet", obj);
 1. Place game systems in `Scripts/Game/`, utilities in `Scripts/Util/`
 2. Use the singleton pattern above for manager classes
 3. Communicate between systems via `EventBus`, avoid direct references
-4. Run `compile-check.sh` before submitting — zero errors required
+4. Run `unity.ps1 compile` before submitting — zero errors required
 5. Do not manually create `.meta` files — Unity generates them automatically
 
 ## What Not To Do

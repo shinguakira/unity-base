@@ -46,14 +46,23 @@ AudioManager.Instance.PlayFootstep();
 
 ## 使い方
 
-**動作環境: Windows 10/11 + Git Bash**
-bash コマンドはすべて Git Bash から実行すること。WSL 不可。
-
 1. このリポジトリをクローンして Unity 2022.3 LTS で開く
 2. 新規シーンを作成し、`GameManager`・`AudioManager`・`ScoreManager`・`UIManager` を空の GameObject にアタッチ
 3. ゲーム固有のスクリプトを `Assets/Scripts/` 以下に追加していく
 
+## スクリプト
+
+```powershell
+# Editor を開く
+powershell -ExecutionPolicy Bypass -File unity.ps1
+
+# バッチモードでコンパイルチェック (Editor は自動で停止される)
+powershell -ExecutionPolicy Bypass -File unity.ps1 compile
+```
+
+コンパイルログは `E:\tmp\unity-build.log` に出力されます。
+
 ## 動作環境
 
-- Unity 2022.3 LTS
+- Windows + Unity 2022.3 LTS
 - 外部パッケージ不要
